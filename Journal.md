@@ -9,3 +9,6 @@ The StreamBuilder listens to the stream provided by the bloc, whenever the bloc 
 
 Phase 3-
 The onPress adds a event to the input sink of the Bloc passing an enum value into it. The bloc creates a new copy of Stock object with the new data base on the enum it received. This new object is returned via the output stream which the StreamBuilder is listen to via its stream field, this queues a call to its builder method to rebuild.
+
+Phase 4-
+The Bloc holds the state data in a seperate class from the ui widget tree, and using Streams and a StreamBuilder to share data back and forth. Nothing should need to change in the StockBloc to change to ui because it lives seperately.
