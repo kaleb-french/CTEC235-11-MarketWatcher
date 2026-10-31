@@ -64,6 +64,35 @@ class StockPage extends StatelessWidget {
                 Text(
                   'Daily Change: ${stock.dailyChange.toStringAsFixed(2)}',
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        bloc.input.add(StockAction.Increase);
+                      },
+                      child: const Text('Bull Market'),
+                    ),
+
+                    const SizedBox(width: 10),
+
+                    ElevatedButton(
+                      onPressed: () {
+                        bloc.input.add(StockAction.Decrease);
+                      },
+                      child: const Text('Bear Market'),
+                    ),
+
+                    const SizedBox(width: 10),
+
+                    ElevatedButton(
+                      onPressed: () {
+                        bloc.input.add(StockAction.Reset);
+                      },
+                      child: const Text('Reset'),
+                    ),
+                  ],
+                ),
               ],
             ),
           );
